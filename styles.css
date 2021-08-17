@@ -57,3 +57,11 @@ button{
     padding-bottom: 2rem;
     /* display: none;S */
 }
+
+@media screen and (max-width: 550px) {
+   .main-section{
+    width: 95%;
+    height: auto;
+    margin: 10% auto;
+   }
+  }
