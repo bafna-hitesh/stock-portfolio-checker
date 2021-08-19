@@ -15,7 +15,7 @@ function checkHandler() {
 function calculatePAndL(initialPrice, qty, currentPrice){
     if(initialPrice > currentPrice){
         var loss = ((initialPrice - currentPrice)* qty).toFixed(2);
-        var lossPercentage = ((loss * 100)/initialPrice).toFixed(2);
+        var lossPercentage = (((initialPrice - currentPrice)* 100)/initialPrice).toFixed(2);
         output.style.color= "blue";
 
         output.innerText=  `You lost ${lossPercentage}%. Your total lost is ₹${loss}`;
@@ -28,7 +28,7 @@ function calculatePAndL(initialPrice, qty, currentPrice){
 
     }else if(currentPrice > initialPrice){
         var profit = ((currentPrice - initialPrice)* qty).toFixed(2);
-        var profitPercentage = ((profit * 100)/initialPrice).toFixed(2);
+        var profitPercentage = (((currentPrice - initialPrice) * 100)/initialPrice).toFixed(2);
         result.style.backgroundColor = "green";
         output.style.color= "white";
         
