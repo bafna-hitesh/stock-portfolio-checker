@@ -2,6 +2,7 @@ const inputs = document.querySelectorAll(".input");
 const output = document.querySelector(".output");
 const button = document.querySelector("#btn");
 const result = document.querySelector(".main-section");
+const bodyAll = document.querySelector("body");
 
 button.addEventListener("click", checkHandler);
 
@@ -21,7 +22,7 @@ function calculatePAndL(initialPrice, qty, currentPrice){
         output.innerText=  `You lost ${lossPercentage}%. Your total lost is ₹${loss}`;
         if(lossPercentage > 50){
             output.style.color= "black";
-            result.style.backgroundColor = "red";
+            bodyAll.style.backgroundColor = "red";
 
             output.innerText=  `You lost ${lossPercentage}%. Your total lost is ₹${loss}`;
         }
@@ -29,7 +30,7 @@ function calculatePAndL(initialPrice, qty, currentPrice){
     }else if(currentPrice > initialPrice){
         var profit = ((currentPrice - initialPrice)* qty).toFixed(2);
         var profitPercentage = (((currentPrice - initialPrice) * 100)/initialPrice).toFixed(2);
-        result.style.backgroundColor = "green";
+        bodyAll.style.backgroundColor = "green";
         output.style.color= "white";
         
         output.innerText=  `You gained ${profitPercentage}%. Your total profit is ₹${profit}`;
