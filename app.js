@@ -30,7 +30,9 @@ function calculatePAndL(initialPrice, qty, currentPrice){
     }else if(currentPrice > initialPrice){
         var profit = ((currentPrice - initialPrice)* qty).toFixed(2);
         var profitPercentage = (((currentPrice - initialPrice) * 100)/initialPrice).toFixed(2);
+        bodyAll.style.display = "none";
         bodyAll.style.backgroundColor = "green";
+
         output.style.color= "white";
         
         output.innerText=  `You gained ${profitPercentage}%. Your total profit is ₹${profit}`;
